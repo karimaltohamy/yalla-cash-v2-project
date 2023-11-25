@@ -2,6 +2,12 @@
 @use "../components/footer";
 @use "../pages/index";
 @use "../pages/about-us";
+@use "../pages/services";
+@use "../pages/product-details";
+@use "../pages/portfolio";
+@use "../pages/project-details";
+@use "../pages/blog-details";
+@use "../pages/contact-us";
 
 @import "../components/variables";
 
@@ -12,6 +18,20 @@
   box-sizing: border-box;
 }
 
+:root {
+  --border-color: rgb(228, 228, 228);
+  --bg-section: #f7fafd;
+  --bg-main: white;
+  --text-color: black;
+  --box-shadow: 0 4px 6px 0 rgba(226, 232, 240, 0.5);
+  --bg-box: #e6f9eb;
+  --bg-box2: white;
+  --bg-hero: url(../images/banner-bg.jpg);
+  --bg-section-gradient: url(../images/aboutrepay.jpg);
+  --bg-section2: linear-gradient(120deg, #ffffff 40%, #238a5e 30%, #238a5e);
+  --bg-section3: linear-gradient(180deg, #e5ecf0 18%, #00000000 59%);
+}
+
 html {
   overflow-x: hidden !important;
 }
@@ -20,6 +40,26 @@ body {
   scroll-behavior: smooth;
   font-family: "Poppins", sans-serif !important;
   overflow-x: hidden !important;
+  background-color: var(--bg-main) !important;
+  color: var(--text-color) !important;
+
+  &.dark {
+    --bg-main: #061712;
+    --text-color: white;
+    --bg-section: #09241c;
+    --box-shadow: 0 4px 6px 0 rgb(0 0 0 / 35%);
+    --bg-box: #16392b;
+    --bg-box2: #16392b;
+    --bg-hero: radial-gradient(at bottom center, #1c7d49 0%, #061712 50%);
+    --bg-section-gradient: radial-gradient(
+      at bottom center,
+      #1c7d49 0%,
+      #09241c 50%
+    );
+    --bg-section2: linear-gradient(120deg, #09241c 40%, #238a5e 30%, #238a5e);
+    --bg-section3: linear-gradient(180deg, #15301f 18%, rgba(0, 0, 0, 0) 59%);
+    --border-color: #2e3c36;
+  }
 }
 
 ul {
@@ -81,7 +121,7 @@ svg {
 
 main {
   position: relative;
-  background-image: url(../images/banner-bg.jpg);
+  background: var(--bg-hero);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
