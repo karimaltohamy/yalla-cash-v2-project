@@ -542,7 +542,7 @@ footer .footer_bottom p {
   z-index: 10;
 }
 .hero_section .container .line .image > img {
-  width: 90%;
+  width: 100%;
   -webkit-transform-origin: 50% 50%;
           transform-origin: 50% 50%;
   -webkit-transition: 2.5s cubic-bezier(0.5, 0.5, 0, 1);
@@ -789,35 +789,23 @@ footer .footer_bottom p {
 .can_you_pay_section .boxs .box .image {
   margin-bottom: 10px;
 }
-.can_you_pay_section .boxs .box .image img {
+.can_you_pay_section .boxs .box .image svg {
   width: 100%;
-  height: 310px;
-  border-radius: 6px;
-  -o-object-fit: cover;
-     object-fit: cover;
+  height: 220px;
 }
 .can_you_pay_section .boxs .box .title {
   font-size: 22px;
   font-weight: 600;
 }
-.can_you_pay_section .boxs .box .items {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  gap: 12px;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  margin-bottom: 10px;
-}
 .can_you_pay_section .boxs .box .items .item {
-  padding: 2px 8px;
-  background-color: #bbf6e2;
-  color: rgb(41, 114, 90);
-  border-radius: 5px;
+  font-size: 15px;
+  color: gray;
+  margin-bottom: 7px;
+}
+.can_you_pay_section .boxs .box .desc {
   font-size: 14px;
+  color: gray;
+  line-height: 1.7;
 }
 .can_you_pay_section .boxs .box .images_payments {
   display: -webkit-box;
@@ -2415,19 +2403,53 @@ footer .footer_bottom p {
 .project_details_section {
   padding: 70px 0;
 }
-.project_details_section .content {
-  max-width: 1000px;
-  margin: auto;
-}
-.project_details_section .image {
-  margin-bottom: 10px;
-}
-.project_details_section .image img {
-  width: 100%;
-  height: 500px;
+.project_details_section .box-imgs {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 2fr 10px 1fr 10px 1fr;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 10px;
   border-radius: 10px;
+  overflow: hidden;
+  position: relative;
+}
+.project_details_section .box-imgs > div {
+  height: 600px;
+}
+.project_details_section .box-imgs .image {
+  width: 100%;
+  height: 100%;
+}
+.project_details_section .box-imgs .image img {
+  width: 100%;
+  height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
+}
+.project_details_section .box-imgs .center,
+.project_details_section .box-imgs .right {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 10px;
+}
+.project_details_section .box-imgs .show-all {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  border: none;
+  background-color: #238a5e;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+.project_details_section .box-imgs .show-all i {
+  margin-right: 5px;
 }
 .project_details_section .line {
   display: -webkit-box;
@@ -2496,8 +2518,12 @@ footer .footer_bottom p {
   .project_details_section {
     padding: 40px 0;
   }
-  .project_details_section .image img {
-    height: 300px;
+  .project_details_section .box-imgs > div {
+    height: 350px;
+  }
+  .project_details_section .box-imgs .show-all {
+    padding: 6px 10px;
+    font-size: 14px;
   }
   .project_details_section .line {
     -webkit-box-orient: vertical;
@@ -2541,6 +2567,58 @@ footer .footer_bottom p {
     margin-bottom: 5px;
   }
 }
+.popup-all {
+  min-height: 100%;
+  position: fixed;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  background-color: black;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  padding: 30px 50px;
+  z-index: 100000;
+  -webkit-transform: scale(0);
+          transform: scale(0);
+  -webkit-transition: all 0.4s;
+  transition: all 0.4s;
+}
+.popup-all.active {
+  -webkit-transform: scale(1);
+          transform: scale(1);
+}
+.popup-all .close-popup {
+  font-size: 23px;
+  color: white;
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  cursor: pointer;
+}
+.popup-all .container-images {
+  background-color: black;
+}
+.popup-all .container-images .images {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 20px;
+  width: 70%;
+  margin: auto;
+}
+.popup-all .container-images .images img {
+  height: 350px;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
 .blog_details_section {
   padding: 60px 0;
 }
